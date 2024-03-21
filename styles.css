@@ -663,6 +663,11 @@ TESTIMONIALS
     justify-content: space-between;
 }
 
+.fa-arrow-left,
+.fa-arrow-right {
+    color:#6415ff;
+}
+
 .testimonials__nav--arrow {
     background-color: #edf2f7;
     margin: 0 12px;
@@ -704,6 +709,11 @@ FAQS
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 500ms ease;
+}
+
+.faq__box:hover {
+    background-color: #dde1e6;
 }
 
 .faq__question {
@@ -786,7 +796,6 @@ FOOTER
 
 .footer__row {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 96px 0;
     background-color: #6415ff;
