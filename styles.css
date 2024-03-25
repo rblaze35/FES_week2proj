@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-html {
-    scroll-behavior: smooth;
-}
-
 * {
     font-family: 'Inter', system-ui;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .site__wrapper {
@@ -45,6 +45,66 @@ li {
 
 .text--purple {
     color: #6415ff;
+}
+
+@keyframes right {
+    0% {
+        transform: translate(100vw);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes left {
+    0% {
+        transform: translate(-100vw);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+#landing__page {
+    animation: left 1000ms ease;
+}
+
+#features {
+    animation: right 1000ms ease;
+}
+
+#work {
+    animation: left 1000ms ease;
+}
+
+#steps {
+    animation: right 1000ms ease;
+}
+
+#values {
+    animation: left 1000ms ease;
+}
+
+#pricing {
+    animation: right 1000ms ease;
+}
+
+#testimonials {
+    animation: left 1000ms ease;
+}
+
+#faq {
+    animation: right 1000ms ease;
+}
+
+#devbox {
+    animation: left 1000ms ease;
+}
+
+footer {
+    animation: right 1000ms ease;
 }
 
 /* 
@@ -102,7 +162,22 @@ nav {
 .nav__link:hover,
 .nav__link--login:hover {
     color: #6415ff;
-    text-decoration: underline;
+}
+
+.nav__link:after,
+.nav__link--login:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    transition: all 300ms ease;
+}
+
+.nav__link:hover:after,
+.nav__link--login:hover:after {
+    background-color: #6415ff;
 }
 
 .nav__link--signup {
@@ -159,18 +234,28 @@ LANDING PAGE
 }
 
 .landing__page--input--box {
-    width: 80%;
-    min-width: 350px;
-    border: 1px solid #7c8ba1;
-    border-radius: 100px;
+    min-width: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .landing__page--input {
-    border: none;
-    margin-left: 8px;
+    width: 100%;
+    font-size: 20px;
+    color: #7c8ba1;
+    padding: 20px 192px 20px 32px;
+    border: 2px solid #7c8ba1;
+    border-radius: 100px;
+    transition: all 300ms ease;
+}
+
+.landing__page--input:hover {
+    border: 2px solid #4a5568;
 }
 
 .landing__page--input--button {
+    width: 128px;
     font-size: 16px;
     font-weight: 700;
     background-color: #6415ff;
@@ -178,6 +263,11 @@ LANDING PAGE
     padding: 16px 0;
     margin: 8px 8px 8px 0;
     border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
     transition: all 300ms ease;
 }
 
@@ -673,7 +763,7 @@ TESTIMONIALS
     margin: 0 12px;
     padding: 16px;
     border-radius: 50px;
-    transition: all 500ms ease;
+    transition: all 300ms ease;
 }
 
 .testimonials__nav--arrow:hover {
@@ -709,7 +799,7 @@ FAQS
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 500ms ease;
+    transition: all 300ms ease;
 }
 
 .faq__box:hover {
@@ -767,7 +857,7 @@ DEVBOX
     border-radius: 50px;
     color: white;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
-    transition: all 500ms ease;
+    transition: all 300ms ease;
 }
 
 .devbox__getstarted:hover {
@@ -780,7 +870,7 @@ DEVBOX
     border: 1px white solid;
     border-radius: 50px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
-    transition: all 500ms ease;
+    transition: all 300ms ease;
 }
 
 .devbox__contactus:hover {
@@ -827,21 +917,21 @@ FOOTER
     font-weight: 400;
     margin-top: 12px;
     position: relative;
-    transition: all 500ms ease;
+    transition: all 300ms ease;
 }
 
 .footer__column--link:after {
     content: "";
     position: absolute;
     height: 2px;
-    background-color: white;
-    width: 0;
+    width: 100%;
     bottom: -5px;
     left: 0;
+    transition: all 300ms ease;
 }
 
 .footer__column--link:hover:after {
-    width: 100%;
+    background-color: white;
 }
 
 .footer__bottom {
@@ -881,7 +971,7 @@ FOOTER
     padding: 8px;
     background-color: white;
     border-radius: 50px;
-    transition: all 500ms ease;
+    transition: all 300ms ease;
 }
 
 .footer__logo:last-child {
